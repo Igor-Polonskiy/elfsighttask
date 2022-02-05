@@ -144,7 +144,7 @@ export default function Filter({ filterCharacters, characters }) {
   ]);
 
   return (
-    <div >
+    <div className=" filterField">
       <h2>Фильтровать по:</h2>
       <div className="filter">
         <div className="filtertype">

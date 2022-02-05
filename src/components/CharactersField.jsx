@@ -29,7 +29,7 @@ export default function CharactersField() {
   }
 
   return (
-    <div>
+    <div className="characters">
       <Filter characters = {characters} filterCharacters = {filterCharacters}/>
       <div className="charactersField">
         {isLoaded ? (
@@ -41,7 +41,7 @@ export default function CharactersField() {
             ))
           )
         ) : (
-          <h3>Загрузка...</h3>
+          <h3 >Загрузка...</h3>
         )}
       </div>
     </div>
