@@ -1,3 +1,98 @@
 .App {
     text-align: center;
 }
+
+.filter {
+    display: flex;
+}
+
+.filtertype {
+    margin: 10px;
+    padding: 10px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 8px 8px 20px #bebebe, -8px -8px 20px #ffffff;
+}
+
+.charactersField {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 0, 0, 400px;
+}
+
+.character {
+    margin: 20px;
+    width: 400px;
+    cursor: pointer;
+}
+
+.prevCharacter:hover {
+    transform: scale(1.1);
+    box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
+    transition: all 0.2s;
+}
+
+.prevCharacter {
+    display: flex;
+    justify-content: flex-start;
+    height: 100px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 8px 8px 20px #bebebe, -8px -8px 20px #ffffff;
+}
+
+.prevImage {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.prevImage img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modalContent {
+    background-color: #fff;
+}
+
+.charracterBody {
+    display: flex;
+    justify-content: space-around;
+}
+
+.characterTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.characterProps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+    font-size: 2rem;
+}
+
+.characterProps span {
+    color: red;
+}
+
+.image img {
+    height: 100%;
+}
