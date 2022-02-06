@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Character from "./Character";
 import Filter from "./Filter";
+import Preloader from "./Preloader";
 
 export default function CharactersField() {
   const [error, setError] = useState(null);
@@ -8,16 +9,14 @@ export default function CharactersField() {
   const [characters, setCharacters] = useState([]);
   const [filtredCharacters, setFiltredCharacters] = useState([])
 
-  // Примечание: пустой массив зависимостей [] означает, что
-  // этот useEffect будет запущен один раз
-  // аналогично componentDidMount()
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
       .then((result) => {
         setIsLoaded(true);
-        setCharacters(result.results);
         setFiltredCharacters(result.results)
+        setCharacters(result.results);
+        
       })
       .catch((e) => {
         setError(e.message);
@@ -34,14 +33,15 @@ export default function CharactersField() {
       <div className="charactersField">
         {isLoaded ? (
           error ? (
-            <div>Ошибка загрузки данных: {error}</div>
-          ) : (
+            <div className="message">Ошибка загрузки данных: {error}</div>
+          ) : filtredCharacters.length? (
             filtredCharacters.map((item) => (
               <Character key={item.id} item={item}></Character>
             ))
-          )
-        ) : (
-          <h3 >Загрузка...</h3>
+            
+          ):  <div className="message">По указанным параметрам ничего не найдено</div>
+        )  : (
+          <Preloader/>
         )}
       </div>
     </div>

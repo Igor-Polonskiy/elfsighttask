@@ -19,7 +19,6 @@ export default function Filter({ filterCharacters, characters }) {
   }
 
   function filterStatus(e) {
-    console.log(e.target.name);
     switch (e.target.name) {
       case "alive":
         setAlive((prev) => (prev = !prev));
@@ -148,8 +147,8 @@ export default function Filter({ filterCharacters, characters }) {
       <h2>Фильтровать по:</h2>
       <div className="filter">
         <div className="filtertype">
+          <div>Имени: </div>
           <div>
-            Имени:{" "}
             <input type="text" value={name} onChange={filterByName}></input>
           </div>
         </div>
@@ -184,7 +183,7 @@ export default function Filter({ filterCharacters, characters }) {
           </label>
         </div>
         <div className="filtertype">
-          <div>Разновидность: </div>
+          <div>Разновидности: </div>
           <label>
             Human{" "}
             <input
@@ -205,7 +204,7 @@ export default function Filter({ filterCharacters, characters }) {
           </label>
         </div>
         <div className="filtertype">
-          <div>Тип: </div>
+          <div>Типу: </div>
           <label>
             Без типа{" "}
             <input
@@ -226,7 +225,7 @@ export default function Filter({ filterCharacters, characters }) {
           </label>
         </div>
         <div className="filtertype">
-          <div>Гендер: </div>
+          <div>Гендеру: </div>
           <label>
             Male{" "}
             <input
